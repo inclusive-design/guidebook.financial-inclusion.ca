@@ -3,7 +3,7 @@
   "description": "Website for the the Guidebook for Financial Inclusion.",
   "main": "eleventy.config.js",
   "type": "module",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "scripts": {
     "build": "npm-run-all -l clean build:eleventy",
     "build:eleventy": "cross-env NODE_ENV=production eleventy",
