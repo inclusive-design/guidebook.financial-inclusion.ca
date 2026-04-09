@@ -61,7 +61,7 @@
     "markdownlint-config-fluid": "^0.1.0",
     "npm-run-all2": "^8.0.0",
     "rimraf": "^6.0.0",
-    "start-server-and-test": "^2.1.2",
+    "start-server-and-test": "^3.0.0",
     "svgo": "^4.0.0"
   },
   "lint-staged": {
