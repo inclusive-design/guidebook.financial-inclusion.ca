@@ -3,7 +3,7 @@
   "description": "Website for the the Guidebook for Financial Inclusion.",
   "main": "eleventy.config.js",
   "type": "module",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "scripts": {
     "build": "npm-run-all -l clean build:eleventy",
     "build:eleventy": "cross-env NODE_ENV=production eleventy",
@@ -49,7 +49,7 @@
   "devDependencies": {
     "@commitlint/cli": "^20.0.0",
     "@commitlint/config-conventional": "^20.0.0",
-    "@inclusive-design/eslint-config": "^0.2.0",
+    "@inclusive-design/eslint-config": "^0.3.0",
     "@inclusive-design/markdownlint-config": "^0.1.0",
     "@inclusive-design/stylelint-config": "^0.1.0",
     "cross-env": "^10.0.0",
@@ -61,7 +61,7 @@
     "markdownlint-config-fluid": "^0.1.0",
     "npm-run-all2": "^8.0.0",
     "rimraf": "^6.0.0",
-    "start-server-and-test": "^2.1.2",
+    "start-server-and-test": "^3.0.0",
     "svgo": "^4.0.0"
   },
   "lint-staged": {
