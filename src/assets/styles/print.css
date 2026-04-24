@@ -1,5 +1,6 @@
 :root {
     /* Type Scale */
+    --step--2: 10pt;
     --step--1: 10pt;
     --step-0: 12pt;
     --step-1: 14pt;

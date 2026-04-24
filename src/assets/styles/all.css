@@ -9,22 +9,46 @@
 }
 
 @font-face {
-    font-family: Martel;
-    font-style: normal;
-    font-weight: 400;
+    font-family: Merriweather;
+    font-stretch: 100%;
+    font-style: italic;
+    font-weight: 300;
     src:
-        url("https://fonts.bunny.net/martel/files/martel-latin-400-normal.woff2") format("woff2"),
-        url("https://fonts.bunny.net/martel/files/martel-latin-400-normal.woff") format("woff");
+        url("https://fonts.bunny.net/merriweather/files/merriweather-latin-300-italic.woff2") format('woff2'),
+        url("https://fonts.bunny.net/merriweather/files/merriweather-latin-300-italic.woff") format('woff');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
 @font-face {
-    font-family: Martel;
-    font-style: normal;
-    font-weight: 700;
+    font-family: Merriweather;
+    font-stretch: 100%;
+    font-style: italic;
+    font-weight: 800;
     src:
-        url("https://fonts.bunny.net/martel/files/martel-latin-700-normal.woff2") format("woff2"),
-        url("https://fonts.bunny.net/martel/files/martel-latin-700-normal.woff") format("woff");
+        url("https://fonts.bunny.net/merriweather/files/merriweather-latin-800-italic.woff2") format('woff2'),
+        url("https://fonts.bunny.net/merriweather/files/merriweather-latin-800-italic.woff") format('woff');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: Merriweather;
+    font-stretch: 100%;
+    font-style: normal;
+    font-weight: 300;
+    src:
+        url("https://fonts.bunny.net/merriweather/files/merriweather-latin-300-normal.woff2") format('woff2'),
+        url("https://fonts.bunny.net/merriweather/files/merriweather-latin-300-normal.woff") format('woff');
+    unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
+}
+
+@font-face {
+    font-family: Merriweather;
+    font-stretch: 100%;
+    font-style: normal;
+    font-weight: 800;
+    src:
+        url("https://fonts.bunny.net/merriweather/files/merriweather-latin-800-normal.woff2") format('woff2'),
+        url("https://fonts.bunny.net/merriweather/files/merriweather-latin-800-normal.woff") format('woff');
     unicode-range: U+0000-00FF, U+0131, U+0152-0153, U+02BB-02BC, U+02C6, U+02DA, U+02DC, U+0304, U+0308, U+0329, U+2000-206F, U+20AC, U+2122, U+2191, U+2193, U+2212, U+2215, U+FEFF, U+FFFD;
 }
 
@@ -90,7 +114,7 @@
     --fi-font-weight-semibold: 600;
     --fi-font-weight-bold: 700;
     --fi-font-weight-extrabold: 800;
-    --fi-font-family-body: martel, serif;
+    --fi-font-family-body: merriweather, serif;
     --fi-font-family-display-alt: diphylleia, serif;
     --fi-font-family-display: mulish, sans-serif;
 
@@ -239,37 +263,91 @@
     /* Fluid Spacing
        @link https://utopia.fyi/space/calculator?c=360,16,1.2,1440,32,1.25,5,2,&s=0.75|0.625,1.5|2|2.5|3|3.75|4.375|6|7|14,xs-2xs|l-6xl|4xl-l|5xl-3xl&g=s,l,xl,12 */
 
-    --fi-space-fluid-2xs: clamp(0.625rem, 0.4167rem + 0.9259vw, 1.25rem); /* Space 2xs: 10px → 20px */
-    --fi-space-fluid-xs: clamp(0.75rem, 0.5rem + 1.1111vw, 1.5rem); /* Space xs: 12px → 24px */
-    --fi-space-fluid-s: clamp(1rem, 0.6667rem + 1.4815vw, 2rem); /* Space s: 16px → 32px */
-    --fi-space-fluid-m: clamp(1.5rem, 1rem + 2.2222vw, 3rem); /* Space m: 24px → 48px */
-    --fi-space-fluid-l: clamp(2rem, 1.3333rem + 2.963vw, 4rem); /* Space l: 32px → 64px */
-    --fi-space-fluid-xl: clamp(2.5rem, 1.6667rem + 3.7037vw, 5rem); /* Space xl: 40px → 80px */
-    --fi-space-fluid-2xl: clamp(3rem, 2rem + 4.4444vw, 6rem); /* Space 2xl: 48px → 96px */
-    --fi-space-fluid-3xl: clamp(3.75rem, 2.5rem + 5.5556vw, 7.5rem); /* Space 3xl: 60px → 120px */
-    --fi-space-fluid-4xl: clamp(4.375rem, 2.9167rem + 6.4815vw, 8.75rem); /* Space 4xl: 70px → 140px */
-    --fi-space-fluid-5xl: clamp(6rem, 4rem + 8.8889vw, 12rem); /* Space 5xl: 96px → 192px */
-    --fi-space-fluid-6xl: clamp(7rem, 4.6667rem + 10.3704vw, 14rem); /* Space 6xl: 112px → 224px */
-    --fi-space-fluid-7xl: clamp(14rem, 9.3333rem + 20.7407vw, 28rem); /* Space 7xl: 224px → 448px */
+    --fi-space-fluid-2xs: clamp(0.625rem, 0.4167rem + 0.9259vw, 1.25rem);
+
+    /* Space 2xs: 10px → 20px */
+    --fi-space-fluid-xs: clamp(0.75rem, 0.5rem + 1.1111vw, 1.5rem);
+
+    /* Space xs: 12px → 24px */
+    --fi-space-fluid-s: clamp(1rem, 0.6667rem + 1.4815vw, 2rem);
+
+    /* Space s: 16px → 32px */
+    --fi-space-fluid-m: clamp(1.5rem, 1rem + 2.2222vw, 3rem);
+
+    /* Space m: 24px → 48px */
+    --fi-space-fluid-l: clamp(2rem, 1.3333rem + 2.963vw, 4rem);
+
+    /* Space l: 32px → 64px */
+    --fi-space-fluid-xl: clamp(2.5rem, 1.6667rem + 3.7037vw, 5rem);
+
+    /* Space xl: 40px → 80px */
+    --fi-space-fluid-2xl: clamp(3rem, 2rem + 4.4444vw, 6rem);
+
+    /* Space 2xl: 48px → 96px */
+    --fi-space-fluid-3xl: clamp(3.75rem, 2.5rem + 5.5556vw, 7.5rem);
+
+    /* Space 3xl: 60px → 120px */
+    --fi-space-fluid-4xl: clamp(4.375rem, 2.9167rem + 6.4815vw, 8.75rem);
+
+    /* Space 4xl: 70px → 140px */
+    --fi-space-fluid-5xl: clamp(6rem, 4rem + 8.8889vw, 12rem);
+
+    /* Space 5xl: 96px → 192px */
+    --fi-space-fluid-6xl: clamp(7rem, 4.6667rem + 10.3704vw, 14rem);
+
+    /* Space 6xl: 112px → 224px */
+    --fi-space-fluid-7xl: clamp(14rem, 9.3333rem + 20.7407vw, 28rem);
+
+    /* Space 7xl: 224px → 448px */
 
     /* One-up pairs */
-    --fi-space-fluid-2xs-xs: clamp(0.625rem, 0.3333rem + 1.2963vw, 1.5rem); /* Space 2xs-xs: 10px → 24px */
-    --fi-space-fluid-xs-s: clamp(0.75rem, 0.3333rem + 1.8519vw, 2rem); /* Space xs-s: 12px → 32px */
-    --fi-space-fluid-s-m: clamp(1rem, 0.3333rem + 2.963vw, 3rem); /* Space s-m: 16px → 48px */
-    --fi-space-fluid-m-l: clamp(1.5rem, 0.6667rem + 3.7037vw, 4rem); /* Space m-l: 24px → 64px */
-    --fi-space-fluid-l-xl: clamp(2rem, 1rem + 4.4444vw, 5rem); /* Space l-xl: 32px → 80px */
-    --fi-space-fluid-xl-2xl: clamp(2.5rem, 1.3333rem + 5.1852vw, 6rem); /* Space xl-2xl: 40px → 96px */
-    --fi-space-fluid-2xl-3xl: clamp(3rem, 1.5rem + 6.6667vw, 7.5rem); /* Space 2xl-3xl: 48px → 120px */
-    --fi-space-fluid-3xl-4xl: clamp(3.75rem, 2.0833rem + 7.4074vw, 8.75rem); /* Space 3xl-4xl: 60px → 140px */
-    --fi-space-fluid-4xl-5xl: clamp(4.375rem, 1.8333rem + 11.2963vw, 12rem); /* Space 4xl-5xl: 70px → 192px */
-    --fi-space-fluid-5xl-6xl: clamp(6rem, 3.3333rem + 11.8519vw, 14rem); /* Space 5xl-6xl: 96px → 224px */
-    --fi-space-fluid-6xl-7xl: clamp(7rem, 0rem + 31.1111vw, 28rem); /* Space 6xl-7xl: 112px → 448px */
+    --fi-space-fluid-2xs-xs: clamp(0.625rem, 0.3333rem + 1.2963vw, 1.5rem);
+
+    /* Space 2xs-xs: 10px → 24px */
+    --fi-space-fluid-xs-s: clamp(0.75rem, 0.3333rem + 1.8519vw, 2rem);
+
+    /* Space xs-s: 12px → 32px */
+    --fi-space-fluid-s-m: clamp(1rem, 0.3333rem + 2.963vw, 3rem);
+
+    /* Space s-m: 16px → 48px */
+    --fi-space-fluid-m-l: clamp(1.5rem, 0.6667rem + 3.7037vw, 4rem);
+
+    /* Space m-l: 24px → 64px */
+    --fi-space-fluid-l-xl: clamp(2rem, 1rem + 4.4444vw, 5rem);
+
+    /* Space l-xl: 32px → 80px */
+    --fi-space-fluid-xl-2xl: clamp(2.5rem, 1.3333rem + 5.1852vw, 6rem);
+
+    /* Space xl-2xl: 40px → 96px */
+    --fi-space-fluid-2xl-3xl: clamp(3rem, 1.5rem + 6.6667vw, 7.5rem);
+
+    /* Space 2xl-3xl: 48px → 120px */
+    --fi-space-fluid-3xl-4xl: clamp(3.75rem, 2.0833rem + 7.4074vw, 8.75rem);
+
+    /* Space 3xl-4xl: 60px → 140px */
+    --fi-space-fluid-4xl-5xl: clamp(4.375rem, 1.8333rem + 11.2963vw, 12rem);
+
+    /* Space 4xl-5xl: 70px → 192px */
+    --fi-space-fluid-5xl-6xl: clamp(6rem, 3.3333rem + 11.8519vw, 14rem);
+
+    /* Space 5xl-6xl: 96px → 224px */
+    --fi-space-fluid-6xl-7xl: clamp(7rem, 0rem + 31.1111vw, 28rem);
+
+    /* Space 6xl-7xl: 112px → 448px */
 
     /* Custom pairs */
-    --fi-space-fluid-xs-2xs: clamp(0.75rem, 0.5833rem + 0.7407vw, 1.25rem); /* Space xs-2xs: 12px → 20px */
-    --fi-space-fluid-l-6xl: clamp(2rem, -2rem + 17.7778vw, 14rem); /* Space l-6xl: 32px → 224px */
-    --fi-space-fluid-4xl-l: clamp(4rem, 4.5rem + -0.5556vw, 4.375rem); /* Space 4xl-l: 70px → 64px */
-    --fi-space-fluid-5xl-3xl: clamp(6rem, 5.5rem + 2.2222vw, 7.5rem); /* Space 5xl-3xl: 96px → 120px */
+    --fi-space-fluid-xs-2xs: clamp(0.75rem, 0.5833rem + 0.7407vw, 1.25rem);
+
+    /* Space xs-2xs: 12px → 20px */
+    --fi-space-fluid-l-6xl: clamp(2rem, -2rem + 17.7778vw, 14rem);
+
+    /* Space l-6xl: 32px → 224px */
+    --fi-space-fluid-4xl-l: clamp(4rem, 4.5rem + -0.5556vw, 4.375rem);
+
+    /* Space 4xl-l: 70px → 64px */
+    --fi-space-fluid-5xl-3xl: clamp(6rem, 5.5rem + 2.2222vw, 7.5rem);
+
+    /* Space 5xl-3xl: 96px → 120px */
 
     /* Margin Padding */
     --fi-margin-padding: var(--fi-space-fluid-l-6xl);
@@ -314,9 +392,6 @@ ol[role="list"] {
     list-style: none;
 }
 
-h1,
-h2,
-h3,
 button,
 input,
 label {
@@ -350,7 +425,7 @@ h4,
 h5,
 .h5 {
     font-family: var(--fi-font-family-display);
-    line-height: 1;
+    line-height: var(--fl-lineSpace-factor, 1.2);
 }
 
 h1 em,
@@ -364,7 +439,6 @@ h1,
 h2,
 h3 {
     font-weight: var(--fi-font-weight-extrabold);
-    line-height: 1.2;
     text-wrap: balance;
 }
 
@@ -379,7 +453,7 @@ a:visited {
 }
 
 /* Utils */
-.flow > * + * {
+.flow>*+* {
     margin-top: var(--flow-space, 1em);
 }
 
@@ -404,24 +478,24 @@ a:visited {
     margin-top: 0;
 }
 
-.frameworks + .frameworks {
+.frameworks+.frameworks {
     margin-top: var(--step-2);
 }
 
-.frameworks > :first-child {
+.frameworks> :first-child {
     display: flex;
     flex-grow: 1;
     width: 60px;
 }
 
-.frameworks > :last-child {
+.frameworks> :last-child {
     flex-basis: 0;
     flex-grow: 999;
     margin-top: 0;
     min-width: 50%;
 }
 
-.frameworks > div > * + * {
+.frameworks>div>*+* {
     margin-top: 1em;
 }
 
@@ -444,7 +518,7 @@ a:visited {
     justify-content: space-between;
 }
 
-.two-column > * {
+.two-column>* {
     width: 50%;
 }
 
@@ -461,7 +535,7 @@ a:visited {
     --flow-space: 0.25rem;
 }
 
-.two-column + * {
+.two-column+* {
     margin-top: 2rem;
 }
 
@@ -629,7 +703,7 @@ a:visited {
 .diagram {
     color: var(--fl-fgColor, var(--fi-color-neutral-800));
     font-family: var(--fi-font-family-display);
-    font-size: var(--step--1);
+    font-size: var(--step--2);
     font-weight: var(--fi-font-weight-semibold);
     line-height: 1.2;
 }
@@ -692,7 +766,7 @@ a:visited {
     --color: var(--fi-quadrant-high-content, var(--fi-color-neutral-800));
 }
 
-.card + .card {
+.card+.card {
     margin-top: 1rem;
 }
 
@@ -722,7 +796,7 @@ a:visited {
     margin-bottom: 2em;
 }
 
-.deep-dive-list > *:first-child {
+.deep-dive-list>*:first-child {
     width: 75%;
 }
 
@@ -761,12 +835,12 @@ a:visited {
     width: 34px;
 }
 
-.hierarchy-list > :last-child {
+.hierarchy-list> :last-child {
     text-align: right;
 }
 
-.hierarchy-list li + li,
-.deep-dive-list li + li {
+.hierarchy-list li+li,
+.deep-dive-list li+li {
     margin-top: var(--fi-space-xl);
 }
 
@@ -775,30 +849,30 @@ a:visited {
     margin-left: 1.25em;
 }
 
-.instructions ol > li + li {
+.instructions ol>li+li {
     margin-top: var(--fi-spacing-500);
 }
 
-.instructions ol > li > p:not(:first-child) {
+.instructions ol>li>p:not(:first-child) {
     margin-left: -1.25em;
 }
 
-.instructions ol > li:has(img.wheel),
-.instructions ol > li:has(svg.wheel) {
+.instructions ol>li:has(img.wheel),
+.instructions ol>li:has(svg.wheel) {
     margin-left: calc(200px + 2rem);
     min-height: 200px;
     position: relative;
 }
 
-.instructions ol > li img.wheel,
-.instructions ol > li svg.wheel {
+.instructions ol>li img.wheel,
+.instructions ol>li svg.wheel {
     left: calc(-1 * (200px + 4rem));
     position: absolute;
     top: 0;
 }
 
-.instructions ol > li:has(img.wheel) > div p:not(:first-child),
-.instructions ol > li:has(svg.wheel) > div p:not(:first-child) {
+.instructions ol>li:has(img.wheel)>div p:not(:first-child),
+.instructions ol>li:has(svg.wheel)>div p:not(:first-child) {
     margin-left: -1.25em;
 }
 
@@ -824,13 +898,13 @@ a:visited {
     margin-left: 0;
 }
 
-p + p,
-p + ul,
-p + ol {
+p+p,
+p+ul,
+p+ol {
     margin-top: var(--flow-space, 1em);
 }
 
-.two-column > * + * {
+.two-column>*+* {
     margin-top: 0;
 }
 
@@ -869,7 +943,7 @@ p + ol {
     width: 36px;
 }
 
-.yes-maybe-no li + li {
+.yes-maybe-no li+li {
     margin-top: var(--fi-space-fluid-2xs);
 }
 
@@ -913,15 +987,15 @@ p + ol {
     list-style: none;
 }
 
-.gap-legend li + li {
+.gap-legend li+li {
     margin-top: calc(14 / 16 * 1rem);
 }
 
-.gap-legend > :first-child {
+.gap-legend> :first-child {
     width: 65px;
 }
 
-.gap-legend > :last-child {
+.gap-legend> :last-child {
     width: 100%;
 }
 

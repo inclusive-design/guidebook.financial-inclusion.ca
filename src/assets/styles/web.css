@@ -1,7 +1,10 @@
 body {
     /* Type Scale */
 
-    /* @link https://utopia.fyi/type/calculator?c=360,16,1.2,1440,22,1.25,5,1,&s=0.75,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+    /* @link https://utopia.fyi/type/calculator?c=360,16,1.2,1440,22,1.25,5,2,&s=0.75,1.5|2|3|4|6,s-l&g=s,l,xl,12 */
+
+    /* Step -2: 11.1111px → 14.08px */
+    --step--2: clamp(0.6944rem, 0.6326rem + 0.2749vw, 0.88rem);
 
     /* Step -1: 13.3333px → 17.6px */
     --step--1: clamp(0.8333rem, 0.7444rem + 0.3951vw, 1.1rem);
@@ -968,6 +971,7 @@ address,
 .small {
     font-size: var(--step--1);
     font-style: normal;
+    line-height: var(--fl-lineSpace-factor, 1.4);
 }
 
 .funders
