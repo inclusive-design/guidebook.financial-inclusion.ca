@@ -1,5 +1,5 @@
 import {exec} from 'node:child_process';
-import {writeFile} from 'node:fs';
+import {writeFile} from 'node:fs/promises';
 import {argv, env} from 'node:process';
 import axios from 'axios';
 
@@ -46,14 +46,13 @@ if (argv[2] === 'local') {
 
 	await Promise.all(Object.entries(languages).map(([lang, filename]) =>
 		axios(docraptorConfig(lang))
-			.then(response => {
-				writeFile(`./src/assets/downloads/${filename}.pdf`, response.data, 'binary', writeError => {
-					if (writeError) {
-						throw writeError;
-					}
-
+			.then(async response => {
+				try {
+					await writeFile(`./src/assets/downloads/${filename}.pdf`, response.data, 'binary');
 					console.log(`Saved ${filename}.pdf.`);
-				});
+				} catch (writeError) {
+					console.error(writeError);
+				}
 			})
 			.catch(error => {
 				const decoder = new TextDecoder('utf-8');

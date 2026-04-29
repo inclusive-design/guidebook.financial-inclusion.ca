@@ -184,8 +184,8 @@ export default function eleventy(eleventyConfig) {
 				dryRun: true,
 			});
 
-			const {document} = parseHTML(mobileImage.svg[0].buffer.toString());
-			mobileSvg = document.querySelector('svg');
+			const {mobileDocument} = parseHTML(mobileImage.svg[0].buffer.toString());
+			mobileSvg = mobileDocument.querySelector('svg');
 			if (altText === '') {
 				mobileSvg.setAttribute('role', 'presentation');
 			} else {
