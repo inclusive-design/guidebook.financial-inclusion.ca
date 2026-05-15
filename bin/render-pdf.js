@@ -1,6 +1,6 @@
-import {exec} from 'node:child_process';
-import {writeFile} from 'node:fs/promises';
-import {argv, env} from 'node:process';
+import { exec } from 'node:child_process';
+import { writeFile } from 'node:fs/promises';
+import { argv, env } from 'node:process';
 import axios from 'axios';
 
 const userCredentials = env.DOCRAPTOR_API_KEY || 'YOUR_API_KEY_HERE';
@@ -10,7 +10,7 @@ const languages = {
 	fr: 'guide-pour-l-inclusion-financiere',
 };
 
-const docraptorConfig = lang => ({
+const docraptorConfig = (lang) => ({
 	url: 'https://api.docraptor.com/docs',
 	method: 'post',
 	responseType: 'arraybuffer',
@@ -46,7 +46,7 @@ if (argv[2] === 'local') {
 
 	await Promise.all(Object.entries(languages).map(([lang, filename]) =>
 		axios(docraptorConfig(lang))
-			.then(async response => {
+			.then(async (response) => {
 				try {
 					await writeFile(`./src/assets/downloads/${filename}.pdf`, response.data, 'binary');
 					console.log(`Saved ${filename}.pdf.`);
@@ -54,7 +54,7 @@ if (argv[2] === 'local') {
 					console.error(writeError);
 				}
 			})
-			.catch(error => {
+			.catch((error) => {
 				const decoder = new TextDecoder('utf-8');
 				console.error(decoder.decode(error.response.data));
 			})));

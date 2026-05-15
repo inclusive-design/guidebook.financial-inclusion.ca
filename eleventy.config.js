@@ -1,15 +1,15 @@
-import {existsSync} from 'node:fs';
-import {env} from 'node:process';
+import { existsSync } from 'node:fs';
+import { env } from 'node:process';
 import * as childProcess from 'node:child_process';
-import {IdAttributePlugin, RenderPlugin} from '@11ty/eleventy';
+import { IdAttributePlugin, RenderPlugin } from '@11ty/eleventy';
 import eleventyNavigationPlugin from '@11ty/eleventy-navigation';
 import fontAwesomePlugin from '@11ty/font-awesome';
-import fluidPlugin, {__} from 'eleventy-plugin-fluid';
+import fluidPlugin, { __ } from 'eleventy-plugin-fluid';
 import footnotesPlugin from 'eleventy-plugin-footnotes';
 import _ from 'lodash';
-import {consolePlus} from 'eleventy-plugin-console-plus';
+import { consolePlus } from 'eleventy-plugin-console-plus';
 import Image from '@11ty/eleventy-img';
-import {parseHTML} from 'linkedom';
+import { parseHTML } from 'linkedom';
 import markdownItAttrs from 'markdown-it-attrs';
 import parseTransform from './src/_transforms/parse-transform.js';
 import findTranslation from './src/_filters/find-translation.js';
@@ -41,8 +41,8 @@ export default function eleventy(eleventyConfig) {
 				uioSlug: 'fr',
 			},
 		},
-		css: {enabled: false},
-		minify: {enabled: false},
+		css: { enabled: false },
+		minify: { enabled: false },
 		markdown: {
 			plugins: [
 				[markdownItAttrs, {}],
@@ -51,19 +51,19 @@ export default function eleventy(eleventyConfig) {
 	});
 
 	for (const lang of ['en', 'fr']) {
-		eleventyConfig.addCollection(`front-matter-${lang}`, collection => collection.getFilteredByGlob(`src/collections/front-matter/${lang}/*.md`).toSorted((a, b) => a.data.order - b.data.order));
+		eleventyConfig.addCollection(`front-matter-${lang}`, (collection) => collection.getFilteredByGlob(`src/collections/front-matter/${lang}/*.md`).toSorted((a, b) => a.data.order - b.data.order));
 
-		eleventyConfig.addCollection(`chapters-${lang}`, collection => collection.getFilteredByGlob(`src/collections/chapters/${lang}/*.md`).toSorted((a, b) => a.data.order - b.data.order));
+		eleventyConfig.addCollection(`chapters-${lang}`, (collection) => collection.getFilteredByGlob(`src/collections/chapters/${lang}/*.md`).toSorted((a, b) => a.data.order - b.data.order));
 
-		eleventyConfig.addCollection(`back-matter-${lang}`, collection => collection.getFilteredByGlob(`src/collections/back-matter/${lang}/*.md`).toSorted((a, b) => a.data.order - b.data.order));
+		eleventyConfig.addCollection(`back-matter-${lang}`, (collection) => collection.getFilteredByGlob(`src/collections/back-matter/${lang}/*.md`).toSorted((a, b) => a.data.order - b.data.order));
 
-		eleventyConfig.addCollection(`paginated-${lang}`, collection => collection.getFilteredByGlob([
+		eleventyConfig.addCollection(`paginated-${lang}`, (collection) => collection.getFilteredByGlob([
 			`src/collections/chapters/${lang}/*.md`,
 			`src/collections/back-matter/${lang}/*.md`,
 		])
 			.toSorted((a, b) => a.data.order - b.data.order));
 
-		eleventyConfig.addCollection(`all-${lang}`, collection => collection.getFilteredByGlob(`src/collections/*/${lang}/*.md`).toSorted((a, b) => a.data.order - b.data.order));
+		eleventyConfig.addCollection(`all-${lang}`, (collection) => collection.getFilteredByGlob(`src/collections/*/${lang}/*.md`).toSorted((a, b) => a.data.order - b.data.order));
 	}
 
 	eleventyConfig.addFilter('findTranslation', findTranslation);
@@ -161,7 +161,7 @@ export default function eleventy(eleventyConfig) {
 			dryRun: true,
 		});
 
-		const {document} = parseHTML(primaryImage.svg[0].buffer.toString());
+		const { document } = parseHTML(primaryImage.svg[0].buffer.toString());
 		const svg = document.querySelector('svg');
 		if (altText === '') {
 			svg.setAttribute('role', 'presentation');
@@ -184,7 +184,7 @@ export default function eleventy(eleventyConfig) {
 				dryRun: true,
 			});
 
-			const {mobileDocument} = parseHTML(mobileImage.svg[0].buffer.toString());
+			const { mobileDocument } = parseHTML(mobileImage.svg[0].buffer.toString());
 			mobileSvg = mobileDocument.querySelector('svg');
 			if (altText === '') {
 				mobileSvg.setAttribute('role', 'presentation');
@@ -219,7 +219,7 @@ export default function eleventy(eleventyConfig) {
 		'src/robots.txt': 'robots.txt',
 	});
 
-	eleventyConfig.addPassthroughCopy({'src/assets/icons': '/'});
+	eleventyConfig.addPassthroughCopy({ 'src/assets/icons': '/' });
 	eleventyConfig.addPassthroughCopy('src/assets/downloads');
 	eleventyConfig.addPassthroughCopy('src/assets/messages');
 
@@ -235,7 +235,7 @@ export default function eleventy(eleventyConfig) {
 
 	eleventyConfig.addShortcode('lastCommitDate', function () {
 		const lastUpdatedFromGit = childProcess.execSync('git log -1 --format=%cd --date=short').toString().trim();
-		const formattedDate = new Date(lastUpdatedFromGit).toLocaleString(`${this.ctx.page.lang}-CA`, {month: 'long', year: 'numeric'});
+		const formattedDate = new Date(lastUpdatedFromGit).toLocaleString(`${this.ctx.page.lang}-CA`, { month: 'long', year: 'numeric' });
 		return formattedDate;
 	});
 
