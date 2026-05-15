@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.3](https://github.com/inclusive-design/guidebook.financial-inclusion.ca/compare/v1.1.2...v1.1.3) (2026-05-15)
+
+
+### Bug Fixes
+
+* rename variable when destructuring ([#256](https://github.com/inclusive-design/guidebook.financial-inclusion.ca/issues/256)) ([a080668](https://github.com/inclusive-design/guidebook.financial-inclusion.ca/commit/a08066879c3e23d7a13f4dcdad4d652420b6c9ba))
+
 ## [1.1.2](https://github.com/inclusive-design/guidebook.financial-inclusion.ca/compare/v1.1.1...v1.1.2) (2026-04-09)
 
 
