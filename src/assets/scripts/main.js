@@ -1,4 +1,4 @@
-document.addEventListener('click', event => {
+document.addEventListener('click', (event) => {
 	if (!event.target.closest('.navigation [aria-expanded]')) {
 		const allMenuButtons = document.querySelectorAll('.navigation [aria-expanded=\'true\']');
 		for (const button of allMenuButtons) {
@@ -20,7 +20,7 @@ document.addEventListener('click', event => {
 	menuButton.setAttribute('aria-expanded', !expanded);
 });
 
-document.addEventListener('keyup', event => {
+document.addEventListener('keyup', (event) => {
 	if (event.key === 'Escape') {
 		const allMenuButtons = document.querySelectorAll('.navigation [aria-expanded=\'true\']');
 		for (const button of allMenuButtons) {
@@ -33,7 +33,7 @@ const subMenus = document.querySelectorAll('.navigation li:has([aria-expanded])'
 for (const subMenu of subMenus) {
 	subMenu.addEventListener(
 		'blur',
-		event => {
+		(event) => {
 			if (!subMenu.contains(event.relatedTarget)) {
 				subMenu.querySelector('[aria-expanded]').setAttribute('aria-expanded', false);
 			}

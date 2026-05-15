@@ -1,6 +1,6 @@
-import {parseHTML} from 'linkedom';
+import { parseHTML } from 'linkedom';
 
-const getContent = element => {
+const getContent = (element) => {
 	const elements = [];
 	while (element.nextElementSibling && element.nextElementSibling.tagName !== 'H3' && element.nextElementSibling.tagName !== 'H4' && element.nextElementSibling.tagName !== 'H5') {
 		elements.push(element.nextElementSibling);
@@ -16,7 +16,7 @@ const getContent = element => {
 
 const parseTransform = (value, outputPath) => {
 	if (outputPath && outputPath.includes('.html')) {
-		const {document} = parseHTML(value);
+		const { document } = parseHTML(value);
 
 		const pageNavHeadings = document.querySelectorAll('main.export h2:not([data-narrative]):not([data-toc])');
 		if (pageNavHeadings.length > 0) {
