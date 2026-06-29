@@ -37,7 +37,7 @@ jobs:
         run: mkdir -p "${{ env.PRINCE_DIR }}"
       - name: Restore Prince .deb cache
         id: prince-cache
-        uses: actions/cache@v5
+        uses: actions/cache@v6
         with:
           path: ${{ env.PRINCE_DIR }}
           key: prince-${{ runner.os }}-${{ env.PRINCE_FILE }}
