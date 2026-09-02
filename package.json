@@ -37,7 +37,7 @@
   "homepage": "https://github.com/inclusive-design/guidebook.financial-inclusion.ca#readme",
   "dependencies": {
     "@11ty/eleventy": "^3.1.0",
-    "@11ty/eleventy-img": "^6.0.4",
+    "@11ty/eleventy-img": "^7.0.0",
     "@11ty/eleventy-navigation": "^1.0.0",
     "@11ty/font-awesome": "^1.0.0-beta.1",
     "axios": "^1.12.2",
