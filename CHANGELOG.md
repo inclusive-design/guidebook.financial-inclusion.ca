@@ -1,5 +1,12 @@
 # Changelog
 
+## [1.1.4](https://github.com/inclusive-design/guidebook.financial-inclusion.ca/compare/v1.1.3...v1.1.4) (2026-10-28)
+
+
+### Bug Fixes
+
+* switch auth base_url ([fea82d2](https://github.com/inclusive-design/guidebook.financial-inclusion.ca/commit/fea82d276ea96d3ac3cf9cf6d017061356b47dd9))
+
 ## [1.1.3](https://github.com/inclusive-design/guidebook.financial-inclusion.ca/compare/v1.1.2...v1.1.3) (2026-05-15)
 
 
