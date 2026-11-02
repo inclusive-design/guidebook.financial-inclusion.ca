@@ -52,7 +52,7 @@ jobs:
           sudo apt-get install "${{ env.PRINCE_DIR }}/${{ env.PRINCE_FILE }}"
       - uses: actions/setup-node@v6
         with:
-          node-version: 24
+          node-version: 26
           cache: npm
       - name: Install dependencies
         run: npm ci
